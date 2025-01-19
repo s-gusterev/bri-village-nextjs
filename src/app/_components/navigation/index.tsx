@@ -9,7 +9,13 @@ type LinkType = {
   title: string;
 };
 
-const Navigation = ({ menu }: { menu: LinkType[] }) => {
+const Navigation = ({
+  menu,
+  onClick,
+}: {
+  menu: LinkType[];
+  onClick?: () => void;
+}) => {
   const pathname = usePathname();
   return (
     <nav className={styles.nav}>
@@ -21,6 +27,7 @@ const Navigation = ({ menu }: { menu: LinkType[] }) => {
               className={`${styles.link} ${
                 pathname === href ? styles.active : ''
               }`}
+              onClick={onClick}
             >
               {title}
             </Link>
