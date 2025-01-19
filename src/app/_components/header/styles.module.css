@@ -65,6 +65,41 @@
   color: #1a3a27;
 }
 
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -9999;
+  transition: opacity 0.3s ease;
+}
+
+.overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(26, 58, 39, 0.7);
+  opacity: 0;
+}
+
+.overlayVisible {
+  opacity: 1;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.overlayVisible::after {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .navigation {
     opacity: 0;
@@ -81,10 +116,11 @@
     max-width: 400px;
     min-width: 300px;
     min-height: 530px;
+    height: 100vh;
     gap: 0;
     transform: translateX(100%);
     transition: all 0.3s ease;
-    z-index: 10;
+    z-index: 1000;
   }
 
   .navigation--open {
