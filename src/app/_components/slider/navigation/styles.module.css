@@ -1,0 +1,77 @@
+.button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:active,
+.button:disabled:focus-visible {
+  background: #c9dace;
+  color: #859f8d;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  background: #3b9254;
+}
+
+.button--primary:hover,
+.button--secondary:hover {
+  background: #4ea366;
+}
+
+.button--primary:active,
+.button--secondary:active {
+  background: #2a7941;
+}
+
+.button--primary:focus-visible,
+.button--secondary:focus-visible {
+  background: #4ea366;
+  outline: none;
+}
+
+.button--secondary {
+  background: #eaf5ed;
+}
+
+.button--secondary svg path {
+  transition: all 0.3s ease;
+  stroke: #3b9254;
+}
+
+.button--secondary:hover svg path {
+  stroke: #fff;
+}
+
+.button--secondary:disabled svg path {
+  stroke: #859f8d;
+}
+
+.button--large {
+  width: 64px;
+  height: 64px;
+}
+
+.button--normal {
+  width: 56px;
+  height: 56px;
+}
+
+.button--medium {
+  width: 48px;
+  height: 48px;
+}
+
+@media (max-width: 768px) {
+  .button {
+    display: none;
+  }
+}

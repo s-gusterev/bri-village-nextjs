@@ -1,0 +1,24 @@
+.logo {
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logoText {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 140px;
+    height: 48px;
+  }
+}

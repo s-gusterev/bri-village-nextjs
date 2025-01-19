@@ -1,0 +1,30 @@
+.close {
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  background: #eaf5ed;
+  border: none;
+  flex-shrink: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-left: auto;
+  display: inline-block;
+}
+
+.close:hover,
+.close:focus {
+  background: #4ea366;
+  outline: none;
+}
+
+.close svg path {
+  transition: all 0.3s ease;
+}
+
+.close:hover svg path,
+.close:focus svg path {
+  stroke: #fff;
+}

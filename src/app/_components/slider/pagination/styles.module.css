@@ -1,0 +1,23 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+}
+
+.dot {
+  width: 25px;
+  height: 3px;
+  margin: 0 5px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s;
+  border-radius: 10px;
+}
+
+.dot.active {
+  width: 40px;
+  opacity: 1;
+  background-color: #fff;
+}

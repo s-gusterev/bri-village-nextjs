@@ -1,0 +1,26 @@
+.burger {
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  background: #3b9254;
+  border: none;
+  flex-shrink: 0;
+  padding: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.burger:hover,
+.burger:focus {
+  background: #4ea366;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+}
