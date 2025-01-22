@@ -26,7 +26,10 @@
 
 .form {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .formGroup {
@@ -69,4 +72,10 @@
 .customHeaderYear {
   font-weight: 400;
   font-size: 13px;
+}
+
+@media (max-width: 425px) {
+  .title {
+    text-align: center;
+  }
 }
