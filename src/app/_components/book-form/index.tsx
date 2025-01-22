@@ -7,15 +7,23 @@ import DatePicker, {
 } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ru } from 'date-fns/locale/ru';
+import Selected from './select';
 registerLocale('ru', ru);
 import styles from './styles.module.css';
 import InputDate from './input';
 import { ArrowLeftIcon, ArrowRightIcon } from '../icons';
+import Button from '../button';
 
 const BookForm = () => {
   const [startSelectedDate, setStartSelectedDate] = useState<Date | null>(null);
   const [endSelectedDate, setEndSelectedDate] = useState<Date | null>(null);
   const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
+  const [selectedAdults, setSelectedAdults] = useState<string[]>([]);
+
+  const handleChangeForm = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(startSelectedDate, endSelectedDate, selectedAdults);
+  };
 
   const handleStartDateChange = (date: Date | null) => {
     setStartSelectedDate(date);
@@ -41,6 +49,14 @@ const BookForm = () => {
 
     return range;
   };
+
+  const optionsSelect = [
+    { value: '1', label: '1 взрослый' },
+    { value: '2', label: '2 взрослых' },
+    { value: '3', label: '3 взрослых' },
+    { value: '4', label: '4 взрослых' },
+    { value: '5', label: '5 взрослых' },
+  ];
 
   const CustomHeader = ({
     date,
@@ -83,7 +99,7 @@ const BookForm = () => {
   return (
     <div className={styles.bookForm}>
       <h2 className={styles.title}>Забронировать домик</h2>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleChangeForm}>
         <div className={styles.formGroup}>
           <label className={styles.label}>Заезд</label>
           <DatePicker
@@ -126,6 +142,20 @@ const BookForm = () => {
             ]}
           />
         </div>
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Количество гостей</label>
+          <Selected
+            options={optionsSelect}
+            placeholder="Выберите количество"
+            defaultValue={null}
+            onChange={(selectedOption) =>
+              selectedOption && setSelectedAdults([selectedOption.value])
+            }
+          />
+        </div>
+        <Button size="normal" color="dark" type="submit">
+          Забронировать
+        </Button>
       </form>
     </div>
   );
