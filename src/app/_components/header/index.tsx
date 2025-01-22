@@ -50,7 +50,11 @@ const Header = () => {
         >
           <div className={styles.mobile}>
             <span className={styles.title__menu}>Меню</span>
-            <CloseButton type="button" onClick={toggleMenu} />
+            <CloseButton
+              type="button"
+              onClick={toggleMenu}
+              aria-label="Закрыть меню"
+            />
           </div>
           <Navigation menu={menu} onClick={closeMenu} />
           <div className={styles.buttons}>
@@ -63,7 +67,7 @@ const Header = () => {
           </div>
         </div>
       </RemoveScroll>
-      <Burger type="button" onClick={toggleMenu} />
+      <Burger type="button" onClick={toggleMenu} aria-label="Открыть меню" />
     </header>
   );
 };
