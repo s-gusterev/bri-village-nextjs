@@ -5,9 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  /* config options here */
   basePath: '/bri-village-nextjs',
-  output: 'export',
   reactStrictMode: true,
 };
 
