@@ -15,7 +15,7 @@
 .button:disabled:focus-visible {
   background: #c9dace;
   color: #859f8d;
-  cursor: not-allowed;
+  cursor: default;
 }
 
 .button--primary {
@@ -51,6 +51,7 @@
   stroke: #fff;
 }
 
+.button--primary:disabled svg path,
 .button--secondary:disabled svg path {
   stroke: #859f8d;
 }

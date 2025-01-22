@@ -5,3 +5,13 @@
 .book {
   margin-bottom: 90px;
 }
+
+.galleryGrid {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .galleryGrid {
+    padding-right: 0;
+  }
+}

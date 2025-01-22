@@ -9,8 +9,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperCore } from 'swiper/types';
 import { useRef, useState } from 'react';
 import { StaticImageData } from 'next/image';
-import SliderNavigation from './navigation';
-import SliderPagination from './pagination';
+import SliderNavigation from '../slider-navigation';
+import SliderPagination from '../slider-pagination';
 import SliderItem from './slider-item';
 
 interface Slide {
