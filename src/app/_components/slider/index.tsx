@@ -59,8 +59,8 @@ const Slider: React.FC<SliderProps> = ({ data, height, onlyImage = false }) => {
         pagination={{ type: 'bullets', clickable: true }}
         modules={[Autoplay, Navigation]}
         loop={true}
-        speed={800}
-        // autoplay={{ delay: 3000 }}
+        speed={400}
+        autoplay={{ delay: 5000 }}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
