@@ -49,12 +49,17 @@
   background: #232120;
 }
 
+.button--dark:hover {
+  background: #302d2c;
+}
+
 .button--large {
   padding: 23px 30px;
 }
 
 .button--normal {
   padding: 19px 30px;
+  height: 56px;
 }
 
 .button--medium {
