@@ -1,11 +1,11 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // output: 'export',
+  output: 'export',
   images: {
-    // unoptimized: true,
+    unoptimized: true,
   },
-  // basePath: '/bri-village-nextjs',
+  basePath: '/bri-village-nextjs',
   reactStrictMode: true,
 };
 
