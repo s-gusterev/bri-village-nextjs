@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Unbounded, Nunito_Sans } from 'next/font/google';
-import Header from './_components/header';
+// import Header from './_components/header';
+import Header from '@/widgets/header';
 import './globals.css';
 
 const lato = localFont({
@@ -9,33 +10,33 @@ const lato = localFont({
   display: 'swap',
   src: [
     {
-      path: './_vendor/fonts/lato-regular.woff2',
+      path: '../shared/assets/fonts/lato-regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './_vendor/fonts/lato-medium.woff2',
+      path: '../shared/assets/fonts/lato-medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './_vendor/fonts/lato-semibold.woff2',
+      path: '../shared/assets/fonts/lato-semibold.woff2',
       weight: '600',
       style: 'normal',
     },
     {
-      path: './_vendor/fonts/lato-bold.woff2',
+      path: '../shared/assets/fonts/lato-bold.woff2',
       weight: '700',
       style: 'normal',
     },
     {
-      path: './_vendor/fonts/lato-bolditalic.woff2',
+      path: '../shared/assets/fonts/lato-bolditalic.woff2',
       weight: '700',
       style: 'italic',
     },
 
     {
-      path: './_vendor/fonts/lato-black.woff2',
+      path: '../shared/assets/fonts/lato-black.woff2',
       weight: '900',
       style: 'normal',
     },

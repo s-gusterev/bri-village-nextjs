@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "date-fns": "^4.1.0",
+    "lodash.debounce": "^4.0.8",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-datepicker": "^7.6.0",
@@ -21,11 +22,13 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
+    "steiger": "^0.5.5",
     "typescript": "^5"
   }
 }
