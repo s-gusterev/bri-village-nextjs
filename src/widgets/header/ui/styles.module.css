@@ -1,0 +1,118 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: -9999;
+  transition: opacity 0.3s ease;
+}
+
+.overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(26, 58, 39, 0.7);
+  opacity: 0;
+}
+
+.overlayVisible {
+  opacity: 1;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.overlayVisible::after {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px 40px;
+  flex-wrap: wrap-reverse;
+}
+
+.mobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.title__menu {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+  color: #1a3a27;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 24px 20px;
+    background: #fff;
+    border-radius: 10px 0 0 10px;
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 530px;
+    height: 100vh;
+    gap: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navigation--open {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    transform: translateX(0);
+  }
+
+  .mobile {
+    display: flex;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-self: center;
+    gap: 15px;
+  }
+
+  .phone {
+    font-size: 20px;
+  }
+}
