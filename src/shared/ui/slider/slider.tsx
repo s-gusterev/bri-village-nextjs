@@ -8,7 +8,6 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderNavigation from '@/shared/ui/slider-navigation';
 import SliderPagination from '@/shared/ui/slider-pagination';
-import SliderItem from '../slider-item';
 import { SliderProps } from '@/shared/model';
 import { useSlider } from '@/shared/lib/useSlider';
 
@@ -16,14 +15,13 @@ interface MyCustomCSS extends CSSProperties {
   '--height-slider': string;
 }
 
-const Slider: React.FC<SliderProps> = ({ data, height, onlyImage = false }) => {
+const Slider: React.FC<SliderProps> = ({ data, height }) => {
   const customProperties: MyCustomCSS = {
     '--height-slider': `${height}px`,
   };
 
   const {
     swiperRef,
-
     handlePaginationChange,
     goToPrevSlide,
     goToNextSlide,
@@ -45,9 +43,10 @@ const Slider: React.FC<SliderProps> = ({ data, height, onlyImage = false }) => {
         onSlideChange={handlePaginationChange}
         style={{ borderRadius: '30px', overflow: 'hidden' }}
       >
-        {data.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <SliderItem slide={slide} onlyImage={onlyImage} />
+        {data.map((slide, index) => (
+          <SwiperSlide key={index}>
+            {slide}
+            {/* <SliderItem slide={slide} onlyImage={onlyImage} /> */}
           </SwiperSlide>
         ))}
       </Swiper>

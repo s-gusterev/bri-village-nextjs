@@ -7,7 +7,7 @@ import { Navigation, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderNavigation from '@/shared/ui/slider-navigation';
 import { CarouselProps } from '../../model/sliders';
-import { useSliderTest } from '@/shared/lib/useSliderTest';
+import { useSlider } from '@/shared/lib/useSlider';
 
 const Gallery: React.FC<CarouselProps> = ({ data, title }) => {
   const {
@@ -17,7 +17,7 @@ const Gallery: React.FC<CarouselProps> = ({ data, title }) => {
     handleSlideChange,
     goToPrevSlide,
     goToNextSlide,
-  } = useSliderTest(data);
+  } = useSlider(data);
 
   return (
     <div className={styles.gallery}>

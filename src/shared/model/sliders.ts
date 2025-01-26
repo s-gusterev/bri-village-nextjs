@@ -18,9 +18,8 @@ export interface SlideGalleryProps {
 }
 
 export interface SliderProps {
-  data: Slide[];
+  data: ReactNode[];
   height: number;
-  onlyImage?: boolean;
 }
 
 export interface CarouselProps {

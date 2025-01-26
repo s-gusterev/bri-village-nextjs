@@ -12,8 +12,9 @@ import { useWindowSize } from '@/shared/lib/use-hooks-ts';
 import SlideCarousel from '@/shared/ui/slide-carousel';
 import SlideGallery from '@/shared/ui/slide-gallery';
 import BookForm from '@/widgets/book-form';
+import SliderItem from '@/shared/ui/slider-item';
 
-const Home = () => {
+export default function HomePage() {
   const { width } = useWindowSize({ initializeWithValue: false });
 
   const isMobile = width !== undefined && width <= 768;
@@ -21,7 +22,12 @@ const Home = () => {
   return (
     <main>
       <section className={`container ${styles.hero}`}>
-        <Slider data={IMAGES_HERO_SLIDER} height={640} />
+        <Slider
+          data={IMAGES_HERO_SLIDER.map((slide) => (
+            <SliderItem key={slide.id} slide={slide} />
+          ))}
+          height={640}
+        />
       </section>
       <section className={`container ${styles.book}`}>
         <BookForm />
@@ -53,6 +59,4 @@ const Home = () => {
       </section>
     </main>
   );
-};
-
-export default Home;
+}
