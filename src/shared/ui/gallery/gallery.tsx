@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderNavigation from '@/shared/ui/slider-navigation';
 import { CarouselProps } from '../../model/sliders';
 import { useSlider } from '@/shared/lib/useSlider';
+import Heading from '../heading';
 
 const Gallery: React.FC<CarouselProps> = ({ data, title }) => {
   const {
@@ -22,7 +23,7 @@ const Gallery: React.FC<CarouselProps> = ({ data, title }) => {
   return (
     <div className={styles.gallery}>
       <div className={styles.header}>
-        {title && <h2 className={styles.title}>{title}</h2>}
+        {title && <Heading level={2}>{title}</Heading>}
         <div className={styles.navigation}>
           <SliderNavigation
             size="normal"

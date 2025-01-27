@@ -15,7 +15,13 @@ interface MyCustomCSS extends CSSProperties {
   '--height-slider': string;
 }
 
-const Slider: React.FC<SliderProps> = ({ data, height }) => {
+const Slider: React.FC<SliderProps> = ({
+  data,
+  height,
+  autoPlay,
+  className,
+  ...rest
+}) => {
   const customProperties: MyCustomCSS = {
     '--height-slider': `${height}px`,
   };
@@ -29,14 +35,20 @@ const Slider: React.FC<SliderProps> = ({ data, height }) => {
     currentIndex,
   } = useSlider(data);
 
+  const autoplaySettings = autoPlay ? { delay: 5000 } : false;
+
   return (
-    <div className={styles.slider} style={customProperties}>
+    <div
+      className={`${styles.slider} ${className || ''}`.trim()}
+      style={customProperties}
+      {...rest}
+    >
       <Swiper
         pagination={{ type: 'bullets', clickable: true }}
         modules={[Autoplay, Navigation]}
         loop={true}
         speed={400}
-        autoplay={{ delay: 5000 }}
+        autoplay={autoplaySettings}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -44,10 +56,7 @@ const Slider: React.FC<SliderProps> = ({ data, height }) => {
         style={{ borderRadius: '30px', overflow: 'hidden' }}
       >
         {data.map((slide, index) => (
-          <SwiperSlide key={index}>
-            {slide}
-            {/* <SliderItem slide={slide} onlyImage={onlyImage} /> */}
-          </SwiperSlide>
+          <SwiperSlide key={index}>{slide}</SwiperSlide>
         ))}
       </Swiper>
       <SliderNavigation

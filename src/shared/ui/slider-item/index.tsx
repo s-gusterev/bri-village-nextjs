@@ -13,13 +13,21 @@ interface Slide {
 const SliderItem = ({
   slide,
   onlyImage,
+  overlay = false,
 }: {
   slide: Slide;
   onlyImage?: boolean;
+  overlay?: boolean;
 }) => {
   return (
     <div className={styles.slide}>
-      <div className={styles.overlay}>
+      <div
+        className={
+          overlay
+            ? `${styles.overlay} ${styles.overlayBackground}`
+            : styles.overlay
+        }
+      >
         <Image
           src={slide.image}
           alt={slide.title || 'Изображение слайда'}

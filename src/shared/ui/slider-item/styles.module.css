@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.overlay::after {
+.overlayBackground::after {
   content: '';
   position: absolute;
   top: 0;

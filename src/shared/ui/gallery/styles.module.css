@@ -11,10 +11,8 @@
   gap: 10px;
 }
 
-.title {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 140%;
-  color: #1a3a27;
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 20px;
+  }
 }

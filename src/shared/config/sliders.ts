@@ -10,6 +10,14 @@ import imageHome9 from '@/shared/assets/images/home-9.webp';
 import imageHome10 from '@/shared/assets/images/home-10.webp';
 import imageHome11 from '@/shared/assets/images/home-11.webp';
 import imageHome12 from '@/shared/assets/images/home-12.webp';
+import imageHome13 from '@/shared/assets/images/home-13.webp';
+import imageHome14 from '@/shared/assets/images/home-14.webp';
+import imageHome15 from '@/shared/assets/images/home-15.webp';
+import imageHome16 from '@/shared/assets/images/home-16.webp';
+import imageHome17 from '@/shared/assets/images/home-17.webp';
+// import imageHome18 from '@/shared/assets/images/home-18.webp';
+// import imageHome19 from '@/shared/assets/images/home-19.webp';
+// import imageHome21 from '@/shared/assets/images/home-21.webp';
 
 const sliderTitle = 'Глэмпинг в Техногороде';
 
@@ -75,4 +83,12 @@ export const IMAGES_BEST_HOME_MOBILE = [
   { id: 12, image: imageHome12 },
   { id: 13, image: imageHome3 },
   { id: 14, image: imageHome6 },
+];
+
+export const IMAGES_SlIDER_BOOK = [
+  { id: 1, image: imageHome13 },
+  { id: 2, image: imageHome14 },
+  { id: 3, image: imageHome15 },
+  { id: 4, image: imageHome16 },
+  { id: 5, image: imageHome17 },
 ];

@@ -6,9 +6,9 @@ import 'swiper/css/effect-fade';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SliderNavigation from '@/shared/ui/slider-navigation';
-
 import { CarouselProps } from '../../model/sliders';
 import { useSlider } from '@/shared/lib/useSlider';
+import Heading from '../heading';
 
 const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
   const {
@@ -23,7 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
   return (
     <div className={styles.gallery}>
       <div className={styles.header}>
-        {title && <h2 className={styles.title}>{title}</h2>}
+        {title && <Heading level={2}>{title}</Heading>}
         <div className={styles.navigation}>
           <SliderNavigation
             size="normal"
@@ -49,7 +49,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
           modules={[Navigation]}
           loop={true}
           speed={300}
-          slidesPerView={1.1}
+          slidesPerView={1.0937}
           spaceBetween={10}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;

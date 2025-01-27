@@ -3,6 +3,7 @@ import {
   IMAGES_HERO_SLIDER,
   IMAGES_BEST_HOME,
   IMAGES_BEST_HOME_MOBILE,
+  IMAGES_SlIDER_BOOK,
 } from '@/shared/config';
 import Slider from '@/shared/ui/slider';
 import Gallery from '@/shared/ui/gallery';
@@ -13,6 +14,10 @@ import SlideCarousel from '@/shared/ui/slide-carousel';
 import SlideGallery from '@/shared/ui/slide-gallery';
 import BookForm from '@/widgets/book-form';
 import SliderItem from '@/shared/ui/slider-item';
+import Heading from '@/shared/ui/heading';
+import Chip from '@/shared/ui/chip';
+import Text from '@/shared/ui/text';
+import Button from '@/shared/ui/button';
 
 export default function HomePage() {
   const { width } = useWindowSize({ initializeWithValue: false });
@@ -24,9 +29,11 @@ export default function HomePage() {
       <section className={`container ${styles.hero}`}>
         <Slider
           data={IMAGES_HERO_SLIDER.map((slide) => (
-            <SliderItem key={slide.id} slide={slide} />
+            <SliderItem key={slide.id} slide={slide} overlay />
           ))}
           height={640}
+          autoPlay={true}
+          className={styles.heroSlider}
         />
       </section>
       <section className={`container ${styles.book}`}>
@@ -56,6 +63,37 @@ export default function HomePage() {
             ))}
           />
         )}
+      </section>
+      <section className="container">
+        <div className={styles.sliderBook}>
+          <Heading level={2} className={styles.headingSliderBook}>
+            Аренда домиков на глэмпинге
+          </Heading>
+          <Slider
+            data={IMAGES_SlIDER_BOOK.map((slide) => (
+              <SliderItem key={slide.id} slide={slide} onlyImage />
+            ))}
+            height={520}
+            autoPlay={false}
+            className={styles.sliderBookSlider}
+          />
+          <div className={styles.sliderBookContent}>
+            <div className={styles.sliderBookText}>
+              <div className={styles.sliderBookChips}>
+                <Chip text="Вс - Чт: 7 000 ₽/сутки" size="small" />
+                <Chip text="Пт - Сб: 10 000 ₽/сутки" size="small" />
+              </div>
+              <Text color="secondary" className={styles.sliderBookDescription}>
+                Вас ждут 5 отдельно стоящих домиков новой постройки, со стильным
+                дизайном, которые оснащены всем необходимым для комфортного
+                отдыха.
+              </Text>
+            </div>
+            <Button size="normal" as="a" href="/rooms">
+              Подробнее
+            </Button>
+          </div>
+        </div>
       </section>
     </main>
   );

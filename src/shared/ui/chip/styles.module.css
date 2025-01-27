@@ -1,0 +1,51 @@
+.chip {
+  font-family: var(--font-family);
+  color: #1a3a27;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.chipSize_small {
+  padding: 0 15px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #515753;
+}
+
+.chipSize_normal {
+  padding: 0 20px;
+  height: 31px;
+  border-radius: 40px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.chipSize_large {
+  padding: 0 16px;
+  height: 37px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.chipColor_default {
+  background-color: #fff;
+}
+
+.chipColor_primary {
+  background-color: #eaf5ed;
+}
+
+.chipColor_secondary {
+  background-color: #eee;
+}
+
+@media (max-width: 480px) {
+  .chipSize_small {
+    height: 29px;
+    font-size: 13px;
+  }
+}
