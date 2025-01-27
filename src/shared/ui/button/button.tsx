@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './styles.module.css';
+import clsx from 'clsx';
 
 type CommonProps = {
   size: 'normal' | 'medium' | 'large';
@@ -27,9 +28,12 @@ const Button: React.FC<Props> = ({
   as = 'button',
   ...rest
 }) => {
-  const combinedClassName = `${styles.button} ${styles[`button--${size}`]} ${
-    styles[`button--${color}`]
-  } ${className || ''}`.trim();
+  const combinedClassName = clsx(
+    styles.button,
+    styles[`button--${size}`],
+    styles[`button--${color}`],
+    className,
+  );
 
   if (as === 'a') {
     const { href, ...linkProps } = rest as LinkProps;

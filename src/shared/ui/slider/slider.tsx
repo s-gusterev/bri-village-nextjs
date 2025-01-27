@@ -10,6 +10,7 @@ import SliderNavigation from '@/shared/ui/slider-navigation';
 import SliderPagination from '@/shared/ui/slider-pagination';
 import { SliderProps } from '@/shared/model';
 import { useSlider } from '@/shared/lib/useSlider';
+import clsx from 'clsx';
 
 interface MyCustomCSS extends CSSProperties {
   '--height-slider': string;
@@ -39,7 +40,7 @@ const Slider: React.FC<SliderProps> = ({
 
   return (
     <div
-      className={`${styles.slider} ${className || ''}`.trim()}
+      className={clsx(styles.slider, className)}
       style={customProperties}
       {...rest}
     >

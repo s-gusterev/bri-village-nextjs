@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React, { FC } from 'react';
 import styles from './styles.module.css';
 
@@ -10,7 +11,7 @@ type HeadingProps = {
 const Heading: FC<HeadingProps> = ({ level, className = '', children }) => {
   const Tag = `h${level}` as keyof React.JSX.IntrinsicElements;
 
-  const combinedStyles = `${styles.heading} ${className}`.trim();
+  const combinedStyles = clsx(styles.heading, className);
 
   return <Tag className={combinedStyles}>{children}</Tag>;
 };

@@ -2,6 +2,7 @@
 import { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import styles from './styles.module.css';
+import clsx from 'clsx';
 
 interface Slide {
   id: number;
@@ -22,11 +23,9 @@ const SliderItem = ({
   return (
     <div className={styles.slide}>
       <div
-        className={
-          overlay
-            ? `${styles.overlay} ${styles.overlayBackground}`
-            : styles.overlay
-        }
+        className={clsx(styles.overlay, {
+          [styles.overlayBackground]: overlay,
+        })}
       >
         <Image
           src={slide.image}

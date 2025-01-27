@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import styles from './styles.module.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,9 +16,11 @@ const Navigation: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`${styles.button} ${styles[`button--${size}`]} ${
-        styles[`button--${color}`]
-      } `}
+      className={clsx(
+        styles.button,
+        styles[`button--${size}`],
+        styles[`button--${color}`],
+      )}
       {...rest}
     >
       {position === 'right' ? (

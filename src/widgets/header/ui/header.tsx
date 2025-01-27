@@ -7,6 +7,7 @@ import { RemoveScroll } from 'react-remove-scroll';
 import CloseButton from '@/shared/ui/close-button';
 import Button from '@/shared/ui/button';
 import Burger from '@/shared/ui/burger';
+import clsx from 'clsx';
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -28,17 +29,17 @@ const Header = () => {
   }, [isMobile]);
 
   return (
-    <header className={`container ${styles.header} `}>
+    <header className={clsx('container', styles.header)}>
       <div
-        className={`${styles.overlay} ${openMenu ? styles.overlayVisible : ''}`}
+        className={clsx(styles.overlay, { [styles.overlayVisible]: openMenu })}
         onClick={toggleMenu}
       ></div>
       <LogoLink />
       <RemoveScroll enabled={openMenu} removeScrollBar={false}>
         <div
-          className={`${styles.navigation}  ${
-            openMenu ? styles['navigation--open'] : ''
-          } `}
+          className={clsx(styles.navigation, {
+            [styles['navigation--open']]: openMenu,
+          })}
         >
           <div className={styles.mobile}>
             <span className={styles.title__menu}>Меню</span>

@@ -1,10 +1,12 @@
 'use client';
+import clsx from 'clsx';
 import {
   IMAGES_HERO_SLIDER,
   IMAGES_BEST_HOME,
   IMAGES_BEST_HOME_MOBILE,
   IMAGES_SlIDER_BOOK,
 } from '@/shared/config';
+import { CARDS_HOME } from '@/shared/config';
 import Slider from '@/shared/ui/slider';
 import Gallery from '@/shared/ui/gallery';
 import styles from './styles.module.css';
@@ -18,6 +20,7 @@ import Heading from '@/shared/ui/heading';
 import Chip from '@/shared/ui/chip';
 import Text from '@/shared/ui/text';
 import Button from '@/shared/ui/button';
+import ServiceSection from '@/widgets/service-section';
 
 export default function HomePage() {
   const { width } = useWindowSize({ initializeWithValue: false });
@@ -26,7 +29,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className={`container ${styles.hero}`}>
+      <section className={clsx('container', styles.hero)}>
         <Slider
           data={IMAGES_HERO_SLIDER.map((slide) => (
             <SliderItem key={slide.id} slide={slide} overlay />
@@ -36,10 +39,10 @@ export default function HomePage() {
           className={styles.heroSlider}
         />
       </section>
-      <section className={`container ${styles.book}`}>
+      <section className={clsx('container', styles.book)}>
         <BookForm />
       </section>
-      <section className={`container ${styles.galleryGrid}`}>
+      <section className={clsx('container', styles.galleryGrid)}>
         {isMobile ? (
           <Carousel
             data={IMAGES_BEST_HOME_MOBILE.map((slide) => (
@@ -94,6 +97,12 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
+      </section>
+      <section className={clsx('container', styles.services)}>
+        <Heading level={2} className={styles.headingServices}>
+          Услуги и акции
+        </Heading>
+        <ServiceSection cards={CARDS_HOME} />
       </section>
     </main>
   );

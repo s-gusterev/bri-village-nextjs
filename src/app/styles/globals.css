@@ -27,7 +27,7 @@ a {
 }
 
 .container {
-  max-width: 1210px;
+  max-width: 1212px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
@@ -166,3 +166,18 @@ a {
   color: white !important;
   border-radius: 50% !important;
 }
+
+/* Icon */
+
+/* button #list-icon path {
+  stroke: #2a7941;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  transform-origin: center;
+  transform-style: preserve-3d;
+} */
+
+/* button:hover #list-icon path {
+  stroke: #fff;
+  transform: scale(1.05);
+} */

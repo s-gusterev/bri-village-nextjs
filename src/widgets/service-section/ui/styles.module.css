@@ -1,0 +1,91 @@
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.button,
+.buttonAll {
+  border: none;
+  border-radius: 10px;
+  background-color: #eaf5ed;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2a7941;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, fill 0.3s ease, color 0.3s ease;
+}
+
+.button svg path {
+  fill: #2a7941;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.buttonActive svg path {
+  fill: #fff;
+  transform: scale(1.05);
+}
+
+.button:hover {
+  background-color: #4ea366;
+  color: #fff;
+}
+
+.button:hover svg path {
+  fill: #fff;
+  transform: scale(1.05);
+}
+
+.buttonAll svg path {
+  stroke: #2a7941;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.buttonAll:hover svg path {
+  stroke: #fff;
+  transform: scale(1.05);
+}
+
+.buttonAll:hover {
+  background-color: #4ea366;
+  color: #fff;
+}
+
+.buttonActiveAll svg path {
+  stroke: #fff;
+  transform: scale(1.05);
+}
+
+.buttonActive,
+.buttonActive:hover,
+.buttonActiveAll,
+.buttonActiveAll:hover {
+  background-color: #2a7941;
+  color: #fff;
+  cursor: default;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 40px 20px;
+  margin-bottom: 80px;
+}

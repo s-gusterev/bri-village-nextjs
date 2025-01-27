@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import { Unbounded, Nunito_Sans } from 'next/font/google';
 import Header from '@/widgets/header';
 import '../styles';
+import clsx from 'clsx';
 
 const lato = localFont({
   variable: '--font-family',
@@ -67,7 +68,7 @@ export function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${lato.variable} ${unbounded.variable} ${nunitoSans.variable} `}
+        className={clsx(lato.variable, unbounded.variable, nunitoSans.variable)}
       >
         <Header />
         {children}

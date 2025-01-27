@@ -43,6 +43,14 @@
   max-width: 832px;
 }
 
+.services {
+  margin-bottom: 80px;
+}
+
+.headingServices {
+  margin-bottom: 40px;
+}
+
 @media (max-width: 768px) {
   .galleryGrid {
     padding-right: 0;

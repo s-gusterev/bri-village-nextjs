@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import styles from './styles.module.css';
 
 interface PaginationProps {
@@ -19,9 +20,9 @@ const Pagination: React.FC<PaginationProps> = ({
       {Array.from({ length: slideCount }).map((_, index) => (
         <button
           key={index}
-          className={`${styles.dot} ${
-            activeIndex === index ? styles.active : ''
-          }`}
+          className={clsx(styles.dot, {
+            [styles.active]: activeIndex === index,
+          })}
           onClick={() => onSlideChange(index)}
           aria-label={`Перейти к слайду ${index + 1}`}
         />

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import styles from './styles.module.css';
 
 type TextProps = React.HTMLAttributes<HTMLParagraphElement> & {
@@ -11,9 +12,11 @@ const Text: React.FC<TextProps> = ({
   className,
   ...rest
 }) => {
-  const combinedClassName = `${styles.text} ${styles[`textColor_${color}`]} ${
-    className || ''
-  }`.trim();
+  const combinedClassName = clsx(
+    styles.text,
+    styles[`textColor_${color}`],
+    className,
+  );
 
   return (
     <p className={combinedClassName} {...rest}>
