@@ -5,4 +5,4 @@ export {
   IMAGES_SlIDER_BOOK,
 } from './sliders';
 
-export { CARDS_HOME } from './filter-cards';
+export { CARDS_SERVICES, SERVICE_LIST } from './service-section';

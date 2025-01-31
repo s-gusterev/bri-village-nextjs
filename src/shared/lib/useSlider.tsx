@@ -1,7 +1,8 @@
 'use client';
 import { useRef, useState } from 'react';
 import { Swiper as SwiperCore } from 'swiper/types';
-import { CarouselProps } from '../model/sliders';
+
+import { CarouselProps } from '@/shared/model/sliders';
 
 export const useSlider = (data: CarouselProps['data']) => {
   const swiperRef = useRef<SwiperCore>(null);

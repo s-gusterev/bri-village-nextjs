@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes } from 'react';
-import { BurgerIcon } from '@/shared/ui/icons';
+
 import styles from './styles.module.css';
+import { BurgerIcon } from '@/shared/ui/icons';
 
 const Burger: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   ...rest

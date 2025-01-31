@@ -1,18 +1,20 @@
 'use client';
+import 'react-datepicker/dist/react-datepicker.css';
 
+import { ru } from 'date-fns/locale/ru';
 import { useState } from 'react';
 import DatePicker, {
   ReactDatePickerCustomHeaderProps,
   registerLocale,
 } from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { ru } from 'date-fns/locale/ru';
-import Selected from './select/select';
-registerLocale('ru', ru);
+
 import styles from './styles.module.css';
-import InputDate from './input/input';
-import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/ui/icons';
 import Button from '@/shared/ui/button';
+import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/ui/icons';
+import InputDate from '@/widgets/book-form/ui/input';
+import Selected from '@/widgets/book-form/ui/select';
+
+registerLocale('ru', ru);
 
 const BookForm = () => {
   const [startSelectedDate, setStartSelectedDate] = useState<Date | null>(null);

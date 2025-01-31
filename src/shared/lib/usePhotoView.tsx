@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { Slide } from '../model/sliders';
+
+import { Slide } from '@/shared/model/sliders';
 
 interface IUsePhotoView {
   visible: boolean;

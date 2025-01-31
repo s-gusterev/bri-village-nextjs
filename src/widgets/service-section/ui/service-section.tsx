@@ -1,16 +1,18 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
-import styles from './styles.module.css';
 import { AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
+import Selected from './select';
+import styles from './styles.module.css';
+import { SERVICE_LIST } from '@/shared/config';
 import { Card } from '@/shared/model';
+import CardPrimary from '@/shared/ui/card-primary';
 import {
   AcUnitIcon,
   HistoryIcon,
   ListIcon,
   NatureIcon,
 } from '@/shared/ui/icons';
-import CardPrimary from '@/shared/ui/card-primary';
 
 const BUTTONS = [
   { id: null, label: 'Все', icon: <ListIcon />, className: styles.buttonAll },
@@ -34,12 +36,18 @@ const BUTTONS = [
   },
 ];
 
+const selectOptions = BUTTONS.map(({ id, label }) => ({ value: id, label }));
+
 const ServiceSection = ({ cards }: { cards: Card[] }) => {
-  const [selectedSeason, setSelectedSeason] = useState<string | null>(null);
+  const [selectedSeason, setSelectedSeason] = useState<string | null>('year');
 
   const filteredCards = selectedSeason
     ? cards.filter((card) => card.season?.includes(selectedSeason))
     : cards;
+
+  const defaultSelectedOption = selectOptions?.find(
+    (option) => option.value === selectedSeason,
+  );
 
   return (
     <>
@@ -59,6 +67,17 @@ const ServiceSection = ({ cards }: { cards: Card[] }) => {
           </button>
         ))}
       </div>
+      <div className={styles.selected}>
+        <Selected
+          options={selectOptions}
+          placeholder="Все"
+          defaultValue={null}
+          onChange={(selectedOption) =>
+            selectedOption && setSelectedSeason(selectedOption.value)
+          }
+          value={defaultSelectedOption || null}
+        />
+      </div>
 
       <ul className={styles.list}>
         <AnimatePresence mode="popLayout" initial={false}>
@@ -68,6 +87,19 @@ const ServiceSection = ({ cards }: { cards: Card[] }) => {
             </li>
           ))}
         </AnimatePresence>
+      </ul>
+      <ul className={styles.listGrid}>
+        {SERVICE_LIST.map((card) => (
+          <li key={card.id} className={styles.listGridItem}>
+            <div
+              className={styles.listGridItemImage}
+              style={{
+                backgroundImage: `url(${card.image.src})`,
+              }}
+            ></div>
+            <p className={styles.listGridItemText}>{card.title}</p>
+          </li>
+        ))}
       </ul>
     </>
   );

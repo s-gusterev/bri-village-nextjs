@@ -166,18 +166,3 @@ a {
   color: white !important;
   border-radius: 50% !important;
 }
-
-/* Icon */
-
-/* button #list-icon path {
-  stroke: #2a7941;
-  transition: all 0.3s ease;
-  transform: scale(1);
-  transform-origin: center;
-  transform-style: preserve-3d;
-} */
-
-/* button:hover #list-icon path {
-  stroke: #fff;
-  transform: scale(1.05);
-} */

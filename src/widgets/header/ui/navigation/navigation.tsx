@@ -1,7 +1,7 @@
 'use client';
-
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import styles from './styles.module.css';
 import { menu } from '@/widgets/header/config';
 

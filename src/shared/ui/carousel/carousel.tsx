@@ -1,14 +1,16 @@
 'use client';
-import styles from './styles.module.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
+
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SliderNavigation from '@/shared/ui/slider-navigation';
-import { CarouselProps } from '../../model/sliders';
+
+import styles from './styles.module.css';
 import { useSlider } from '@/shared/lib/useSlider';
-import Heading from '../heading';
+import { CarouselProps } from '@/shared/model/sliders';
+import Heading from '@/shared/ui/heading';
+import SliderNavigation from '@/shared/ui/slider-navigation';
 
 const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
   const {

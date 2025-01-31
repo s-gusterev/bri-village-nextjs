@@ -1,8 +1,9 @@
 'use client';
-import Image from 'next/image';
-import styles from './styles.module.css';
 import 'react-photo-view/dist/react-photo-view.css';
+import Image from 'next/image';
 import { PhotoSlider } from 'react-photo-view';
+
+import styles from './styles.module.css';
 import { SlideGalleryProps, Slide } from '../../model/sliders';
 import { usePhotoView } from '@/shared/lib/usePhotoView';
 

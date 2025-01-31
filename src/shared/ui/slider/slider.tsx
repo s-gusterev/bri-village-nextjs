@@ -1,16 +1,18 @@
 'use client';
-import styles from './styles.module.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import clsx from 'clsx';
 import { CSSProperties } from 'react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import styles from './styles.module.css';
+import { useSlider } from '@/shared/lib/useSlider';
+import { SliderProps } from '@/shared/model';
 import SliderNavigation from '@/shared/ui/slider-navigation';
 import SliderPagination from '@/shared/ui/slider-pagination';
-import { SliderProps } from '@/shared/model';
-import { useSlider } from '@/shared/lib/useSlider';
-import clsx from 'clsx';
 
 interface MyCustomCSS extends CSSProperties {
   '--height-slider': string;

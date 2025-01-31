@@ -1,25 +1,26 @@
 'use client';
 import clsx from 'clsx';
+
+import styles from './styles.module.css';
 import {
   IMAGES_HERO_SLIDER,
   IMAGES_BEST_HOME,
   IMAGES_BEST_HOME_MOBILE,
   IMAGES_SlIDER_BOOK,
 } from '@/shared/config';
-import { CARDS_HOME } from '@/shared/config';
-import Slider from '@/shared/ui/slider';
-import Gallery from '@/shared/ui/gallery';
-import styles from './styles.module.css';
-import Carousel from '@/shared/ui/carousel';
+import { CARDS_SERVICES } from '@/shared/config';
 import { useWindowSize } from '@/shared/lib/use-hooks-ts';
+import Button from '@/shared/ui/button';
+import Carousel from '@/shared/ui/carousel';
+import Chip from '@/shared/ui/chip';
+import Gallery from '@/shared/ui/gallery';
+import Heading from '@/shared/ui/heading';
 import SlideCarousel from '@/shared/ui/slide-carousel';
 import SlideGallery from '@/shared/ui/slide-gallery';
-import BookForm from '@/widgets/book-form';
+import Slider from '@/shared/ui/slider';
 import SliderItem from '@/shared/ui/slider-item';
-import Heading from '@/shared/ui/heading';
-import Chip from '@/shared/ui/chip';
 import Text from '@/shared/ui/text';
-import Button from '@/shared/ui/button';
+import BookForm from '@/widgets/book-form';
 import ServiceSection from '@/widgets/service-section';
 
 export default function HomePage() {
@@ -102,7 +103,7 @@ export default function HomePage() {
         <Heading level={2} className={styles.headingServices}>
           Услуги и акции
         </Heading>
-        <ServiceSection cards={CARDS_HOME} />
+        <ServiceSection cards={CARDS_SERVICES} />
       </section>
     </main>
   );

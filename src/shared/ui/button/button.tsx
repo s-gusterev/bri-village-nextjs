@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import styles from './styles.module.css';
 import clsx from 'clsx';
+import Link from 'next/link';
+
+import styles from './styles.module.css';
 
 type CommonProps = {
   size: 'normal' | 'medium' | 'large';

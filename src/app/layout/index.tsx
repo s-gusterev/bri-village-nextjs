@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import { Unbounded, Nunito_Sans } from 'next/font/google';
-import Header from '@/widgets/header';
-import '../styles';
 import clsx from 'clsx';
+import type { Metadata } from 'next';
+import { Unbounded, Nunito_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
+
+import Header from '@/widgets/header';
+
+import '../styles';
 
 const lato = localFont({
   variable: '--font-family',

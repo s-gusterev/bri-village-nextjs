@@ -1,9 +1,9 @@
 'use client';
 import Link from 'next/link';
-import styles from './styles.module.css';
 import { usePathname } from 'next/navigation';
-import Logo from '@/shared/ui/logo';
 
+import styles from './styles.module.css';
+import Logo from '@/shared/ui/logo';
 const LogoLink = () => {
   const pathname = usePathname();
 

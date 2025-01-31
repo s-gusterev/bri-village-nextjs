@@ -1,13 +1,13 @@
-import MobileIcon from './mobile';
+import AcUnitIcon from './ac-unit';
+import ArrowLeftIcon from './arrow-left';
+import ArrowRightIcon from './arrow-right';
 import BurgerIcon from './burger';
 import CloseIcon from './close';
 import DataPickerIcon from './datapicker';
-import ArrowLeftIcon from './arrow-left';
-import ArrowRightIcon from './arrow-right';
-import ListIcon from './list';
 import HistoryIcon from './history';
+import ListIcon from './list';
+import MobileIcon from './mobile';
 import NatureIcon from './nature';
-import AcUnitIcon from './ac-unit';
 
 export {
   MobileIcon,

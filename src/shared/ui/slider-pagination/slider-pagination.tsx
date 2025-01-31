@@ -1,5 +1,6 @@
 'use client';
 import clsx from 'clsx';
+
 import styles from './styles.module.css';
 
 interface PaginationProps {

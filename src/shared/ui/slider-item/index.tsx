@@ -1,8 +1,9 @@
 'use client';
+import clsx from 'clsx';
 import { StaticImageData } from 'next/image';
 import Image from 'next/image';
+
 import styles from './styles.module.css';
-import clsx from 'clsx';
 
 interface Slide {
   id: number;

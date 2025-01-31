@@ -1,15 +1,16 @@
 'use client';
-import styles from './styles.module.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import { Navigation, EffectFade } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SliderNavigation from '@/shared/ui/slider-navigation';
-import { CarouselProps } from '../../model/sliders';
-import { useSlider } from '@/shared/lib/useSlider';
-import Heading from '../heading';
 
+import { EffectFade, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { CarouselProps } from '../../model/sliders';
+import Heading from '../heading';
+import styles from './styles.module.css';
+import { useSlider } from '@/shared/lib/useSlider';
+import SliderNavigation from '@/shared/ui/slider-navigation';
 const Gallery: React.FC<CarouselProps> = ({ data, title }) => {
   const {
     swiperRef,

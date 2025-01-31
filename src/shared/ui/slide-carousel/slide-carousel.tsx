@@ -1,10 +1,12 @@
 'use client';
-import Image from 'next/image';
-import styles from './styles.module.css';
 import 'react-photo-view/dist/react-photo-view.css';
+
+import Image from 'next/image';
 import { PhotoSlider } from 'react-photo-view';
-import { Slide } from '../../model/sliders';
+
+import styles from './styles.module.css';
 import { usePhotoView } from '../../lib/usePhotoView';
+import { Slide } from '../../model/sliders';
 
 const SlideCarousel = ({
   slide,
