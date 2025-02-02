@@ -59,6 +59,16 @@
   background: #4ea366;
 }
 
+.button--light {
+  background: #eaf5ed;
+  color: #2a7941;
+}
+
+.button--light:hover {
+  background: #4ea366;
+  color: #eaf5ed;
+}
+
 .button--large {
   padding: 23px 30px;
 }

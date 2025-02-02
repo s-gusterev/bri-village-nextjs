@@ -23,6 +23,7 @@ import SlideGallery from '@/shared/ui/slide-gallery';
 import Slider from '@/shared/ui/slider';
 import SliderItem from '@/shared/ui/slider-item';
 import Text from '@/shared/ui/text';
+import Banner from '@/widgets/banner';
 import ServiceSection from '@/widgets/service-section';
 
 export default function HomePage() {
@@ -129,6 +130,9 @@ export default function HomePage() {
         </div>
       </section>
       <AboutSection />
+      <section className={clsx('container', styles.banner)}>
+        <Banner />
+      </section>
     </main>
   );
 }

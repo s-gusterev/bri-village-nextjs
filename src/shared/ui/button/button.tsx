@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 type CommonProps = {
   size: 'normal' | 'medium' | 'large';
-  color?: 'primary' | 'secondary' | 'dark';
+  color?: 'primary' | 'secondary' | 'dark' | 'light';
   children: React.ReactNode;
   className?: string;
 };
