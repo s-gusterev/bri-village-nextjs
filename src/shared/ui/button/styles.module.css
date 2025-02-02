@@ -46,12 +46,17 @@
   color: #2a7941;
 }
 
+.button--secondary:hover {
+  background: #4ea366;
+  color: #fff;
+}
+
 .button--dark {
   background: #232120;
 }
 
 .button--dark:hover {
-  background: #302d2c;
+  background: #4ea366;
 }
 
 .button--large {

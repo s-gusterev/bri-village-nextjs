@@ -20,28 +20,26 @@ const SliderItem = ({
   slide: Slide;
   onlyImage?: boolean;
   overlay?: boolean;
-}) => {
-  return (
-    <div className={styles.slide}>
-      <div
-        className={clsx(styles.overlay, {
-          [styles.overlayBackground]: overlay,
-        })}
-      >
-        <Image
-          src={slide.image}
-          alt={slide.title || 'Изображение слайда'}
-          priority
-        />
-      </div>
-      {onlyImage ? null : (
-        <div className={styles.content}>
-          <h2>{slide.title}</h2>
-          <p>{slide.description}</p>
-        </div>
-      )}
+}) => (
+  <div className={styles.slide}>
+    <div
+      className={clsx(styles.overlay, {
+        [styles.overlayBackground]: overlay,
+      })}
+    >
+      <Image
+        src={slide.image}
+        alt={slide.title || 'Изображение слайда'}
+        priority
+      />
     </div>
-  );
-};
+    {onlyImage ? null : (
+      <div className={styles.content}>
+        <h2>{slide.title}</h2>
+        <p>{slide.description}</p>
+      </div>
+    )}
+  </div>
+);
 
 export default SliderItem;

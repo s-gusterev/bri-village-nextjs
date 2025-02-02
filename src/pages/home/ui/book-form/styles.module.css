@@ -1,7 +1,8 @@
 .bookForm {
   border-radius: 10px;
-  background: url(../../../shared//assets/images/bg-form-book.png) no-repeat
-      center center / cover,
+  background:
+    url(../../../../shared/assets/images/bg-form-book.png) no-repeat center
+      center / cover,
     linear-gradient(
       135deg,
       #24733b 0%,

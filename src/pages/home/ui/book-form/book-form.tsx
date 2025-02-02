@@ -9,10 +9,10 @@ import DatePicker, {
 } from 'react-datepicker';
 
 import styles from './styles.module.css';
+import InputDate from '@/pages/home/ui/book-form/input';
+import Selected from '@/pages/home/ui/book-form/select';
 import Button from '@/shared/ui/button';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/ui/icons';
-import InputDate from '@/widgets/book-form/ui/input';
-import Selected from '@/widgets/book-form/ui/select';
 
 registerLocale('ru', ru);
 

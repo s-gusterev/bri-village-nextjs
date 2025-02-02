@@ -31,11 +31,11 @@ const Slider: React.FC<SliderProps> = ({
 
   const {
     swiperRef,
-    handlePaginationChange,
     goToPrevSlide,
     goToNextSlide,
     handlePaginationClick,
     currentIndex,
+    handleSlideChange,
   } = useSlider(data);
 
   const autoplaySettings = autoPlay ? { delay: 5000 } : false;
@@ -55,7 +55,7 @@ const Slider: React.FC<SliderProps> = ({
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={handlePaginationChange}
+        onSlideChange={handleSlideChange}
         style={{ borderRadius: '30px', overflow: 'hidden' }}
       >
         {data.map((slide, index) => (

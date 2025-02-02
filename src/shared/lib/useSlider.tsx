@@ -8,20 +8,14 @@ export const useSlider = (data: CarouselProps['data']) => {
   const swiperRef = useRef<SwiperCore>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const isPrevDisabled = currentIndex === 0;
-  const isNextDisabled = currentIndex === data.length - 1;
+  const [isPrevDisabled, setIsPrevDisabled] = useState(true);
+  const [isNextDisabled, setIsNextDisabled] = useState(data.length <= 1);
 
   const handleSlideChange = () => {
     if (swiperRef.current) {
-      const swiper = swiperRef.current;
-      setCurrentIndex(swiper.activeIndex);
-    }
-  };
-
-  const handlePaginationChange = () => {
-    const swiper = swiperRef.current;
-    if (swiper) {
-      setCurrentIndex(swiper.realIndex);
+      setCurrentIndex(swiperRef.current.realIndex);
+      setIsPrevDisabled(swiperRef.current.isBeginning);
+      setIsNextDisabled(swiperRef.current.isEnd);
     }
   };
 
@@ -34,9 +28,8 @@ export const useSlider = (data: CarouselProps['data']) => {
   };
 
   const handlePaginationClick = (index: number) => {
-    const swiper = swiperRef.current;
-    if (swiper) {
-      swiper.slideToLoop(index);
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(index);
       setCurrentIndex(index);
     }
   };
@@ -50,6 +43,5 @@ export const useSlider = (data: CarouselProps['data']) => {
     goToPrevSlide,
     goToNextSlide,
     handlePaginationClick,
-    handlePaginationChange,
   };
 };

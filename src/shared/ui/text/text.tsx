@@ -12,18 +12,13 @@ const Text: React.FC<TextProps> = ({
   children,
   className,
   ...rest
-}) => {
-  const combinedClassName = clsx(
-    styles.text,
-    styles[`textColor_${color}`],
-    className,
-  );
-
-  return (
-    <p className={combinedClassName} {...rest}>
-      {children}
-    </p>
-  );
-};
+}) => (
+  <p
+    className={clsx(styles.text, styles[`textColor_${color}`], className)}
+    {...rest}
+  >
+    {children}
+  </p>
+);
 
 export default Text;

@@ -8,18 +8,16 @@ type ChipProps = {
   size: 'normal' | 'small' | 'large';
 };
 
-const Chip = ({ text, variant = 'default', size }: ChipProps) => {
-  return (
-    <span
-      className={clsx(
-        styles.chip,
-        styles[`chipSize_${size}`],
-        variant && styles[`chipColor_${variant}`],
-      )}
-    >
-      {text}
-    </span>
-  );
-};
+const Chip = ({ text, variant = 'default', size }: ChipProps) => (
+  <span
+    className={clsx(
+      styles.chip,
+      styles[`chipSize_${size}`],
+      variant && styles[`chipColor_${variant}`],
+    )}
+  >
+    {text}
+  </span>
+);
 
 export default Chip;

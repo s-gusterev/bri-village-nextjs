@@ -1,0 +1,11 @@
+export {
+  IMAGES_SlIDER_BOOK,
+  IMAGES_BEST_HOME_MOBILE,
+  IMAGES_BEST_HOME,
+  IMAGES_HERO_SLIDER,
+  SLIDER_INFRASTRUCTURE,
+  IMAGES_ABOUT_SECTION,
+  LIST_ABOUT_SECTION,
+} from './constans';
+
+// export { LIST_ABOUT_SECTION } from './about-section-list';

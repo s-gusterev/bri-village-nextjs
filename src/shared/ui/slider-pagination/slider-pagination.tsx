@@ -15,21 +15,19 @@ const Pagination: React.FC<PaginationProps> = ({
   activeIndex,
   onSlideChange,
   style,
-}) => {
-  return (
-    <div className={styles.pagination} style={style}>
-      {Array.from({ length: slideCount }).map((_, index) => (
-        <button
-          key={index}
-          className={clsx(styles.dot, {
-            [styles.active]: activeIndex === index,
-          })}
-          onClick={() => onSlideChange(index)}
-          aria-label={`Перейти к слайду ${index + 1}`}
-        />
-      ))}
-    </div>
-  );
-};
+}) => (
+  <div className={styles.pagination} style={style}>
+    {Array.from({ length: slideCount }).map((_, index) => (
+      <button
+        key={index}
+        className={clsx(styles.dot, {
+          [styles.active]: activeIndex === index,
+        })}
+        onClick={() => onSlideChange(index)}
+        aria-label={`Перейти к слайду ${index + 1}`}
+      />
+    ))}
+  </div>
+);
 
 export default Pagination;

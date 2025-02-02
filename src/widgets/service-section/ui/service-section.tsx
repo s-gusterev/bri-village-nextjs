@@ -1,11 +1,10 @@
+'use client';
 import clsx from 'clsx';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 import Selected from './select';
 import styles from './styles.module.css';
-import { SERVICE_LIST } from '@/shared/config';
-import { Card } from '@/shared/model';
 import CardPrimary from '@/shared/ui/card-primary';
 import {
   AcUnitIcon,
@@ -13,6 +12,10 @@ import {
   ListIcon,
   NatureIcon,
 } from '@/shared/ui/icons';
+import {
+  SERVICE_LIST,
+  CARDS_SERVICES,
+} from '@/widgets/service-section/config/constans';
 
 const BUTTONS = [
   { id: null, label: 'Все', icon: <ListIcon />, className: styles.buttonAll },
@@ -38,12 +41,12 @@ const BUTTONS = [
 
 const selectOptions = BUTTONS.map(({ id, label }) => ({ value: id, label }));
 
-const ServiceSection = ({ cards }: { cards: Card[] }) => {
+const ServiceSection = () => {
   const [selectedSeason, setSelectedSeason] = useState<string | null>('year');
 
   const filteredCards = selectedSeason
-    ? cards.filter((card) => card.season?.includes(selectedSeason))
-    : cards;
+    ? CARDS_SERVICES.filter((card) => card.season?.includes(selectedSeason))
+    : CARDS_SERVICES;
 
   const defaultSelectedOption = selectOptions?.find(
     (option) => option.value === selectedSeason,

@@ -26,4 +26,5 @@ export interface SliderProps extends HTMLAttributes<HTMLDivElement> {
 export interface CarouselProps {
   data: ReactNode[];
   title?: string;
+  slidesPerView?: number;
 }

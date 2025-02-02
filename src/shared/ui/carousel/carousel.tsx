@@ -12,7 +12,11 @@ import { CarouselProps } from '@/shared/model/sliders';
 import Heading from '@/shared/ui/heading';
 import SliderNavigation from '@/shared/ui/slider-navigation';
 
-const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
+const Carousel: React.FC<CarouselProps> = ({
+  data,
+  title,
+  slidesPerView = 4,
+}) => {
   const {
     swiperRef,
     isPrevDisabled,
@@ -49,7 +53,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
       <div className={styles.slider}>
         <Swiper
           modules={[Navigation]}
-          loop={true}
+          loop={false}
           speed={300}
           slidesPerView={1.0937}
           spaceBetween={10}
@@ -63,7 +67,12 @@ const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
               slidesPerView: 1.5,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1230: {
+              slidesPerView: slidesPerView,
+              spaceBetween: 20,
             },
           }}
         >
