@@ -111,6 +111,14 @@
   display: block;
 }
 
+.banner {
+  margin-bottom: 80px;
+}
+
+.bannerSection {
+  margin-bottom: 80px;
+}
+
 @media (max-width: 768px) {
   .galleryGrid {
     padding-right: 0;
@@ -134,20 +142,16 @@
     margin-bottom: 60px;
   }
 
-  .services {
-    margin-bottom: 60px;
-  }
-
-  .sliderInfrastructure {
+  .book,
+  .services,
+  .sliderInfrastructure,
+  .bannerSection,
+  .banner {
     margin-bottom: 60px;
   }
 
   .sliderInfrastructureContainer {
     padding-right: 0;
-  }
-
-  .sliderInfrastructureTitle {
-    font-size: 16px;
   }
 }
 
@@ -187,14 +191,11 @@
     margin-bottom: 20px;
   }
 
-  .book {
-    margin-bottom: 40px;
-  }
-  .services {
-    margin-bottom: 40px;
-  }
-
-  .sliderInfrastructure {
+  .book,
+  .services,
+  .sliderInfrastructure,
+  .bannerSection,
+  .banner {
     margin-bottom: 40px;
   }
 }

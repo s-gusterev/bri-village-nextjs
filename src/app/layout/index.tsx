@@ -32,6 +32,11 @@ const lato = localFont({
       style: 'normal',
     },
     {
+      path: '../../shared/assets/fonts/lato-italic.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
       path: '../../shared/assets/fonts/lato-bolditalic.woff2',
       weight: '700',
       style: 'italic',

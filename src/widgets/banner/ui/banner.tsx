@@ -1,12 +1,16 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 
 import styles from './styles.module.css';
 import bannerImage from '@/shared/assets/images/home-16.webp';
 import Button from '@/shared/ui/button';
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
+}
 
-const Banner = () => {
+const Banner = ({ className, ...rest }: Props) => {
   return (
-    <div className={styles.banner}>
+    <div className={clsx(styles.banner, className)} {...rest}>
       <Image
         className={styles.image}
         src={bannerImage}

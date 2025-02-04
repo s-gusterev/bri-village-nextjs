@@ -166,3 +166,13 @@ a {
   color: white !important;
   border-radius: 50% !important;
 }
+
+/* Стили слайдера отзывов */
+
+/* [data-section='reviews'] .swiper-wrapper {
+  align-items: stretch;
+}
+
+[data-section='reviews'] .swiper-slide {
+  height: auto;
+} */

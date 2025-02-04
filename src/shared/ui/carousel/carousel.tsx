@@ -16,6 +16,7 @@ const Carousel: React.FC<CarouselProps> = ({
   data,
   title,
   slidesPerView = 4,
+  slidesPerViewTablet = 2,
 }) => {
   const {
     swiperRef,
@@ -67,7 +68,7 @@ const Carousel: React.FC<CarouselProps> = ({
               slidesPerView: 1.5,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: slidesPerViewTablet,
               spaceBetween: 20,
             },
             1230: {

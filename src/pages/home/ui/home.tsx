@@ -24,6 +24,8 @@ import Slider from '@/shared/ui/slider';
 import SliderItem from '@/shared/ui/slider-item';
 import Text from '@/shared/ui/text';
 import Banner from '@/widgets/banner';
+import BookingForm from '@/widgets/booking-form';
+import ReviewsSection from '@/widgets/reviews-section';
 import ServiceSection from '@/widgets/service-section';
 
 export default function HomePage() {
@@ -126,12 +128,17 @@ export default function HomePage() {
               </div>
             ))}
             title="Инфраструктура рядом"
+            slidesPerViewTablet={3}
           />
         </div>
       </section>
       <AboutSection />
-      <section className={clsx('container', styles.banner)}>
-        <Banner />
+      <section className={clsx('container', styles.bannerSection)}>
+        <Banner className={styles.banner} />
+        <BookingForm />
+      </section>
+      <section>
+        <ReviewsSection />
       </section>
     </main>
   );

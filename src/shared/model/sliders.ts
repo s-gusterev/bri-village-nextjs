@@ -27,4 +27,5 @@ export interface CarouselProps {
   data: ReactNode[];
   title?: string;
   slidesPerView?: number;
+  slidesPerViewTablet?: number;
 }
