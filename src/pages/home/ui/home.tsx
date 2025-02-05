@@ -34,7 +34,7 @@ export default function HomePage() {
   const isMobile = width !== undefined && width <= 768;
 
   return (
-    <main>
+    <>
       <section className={clsx('container', styles.hero)}>
         <Slider
           data={IMAGES_HERO_SLIDER.map((slide) => (
@@ -140,6 +140,6 @@ export default function HomePage() {
       <section>
         <ReviewsSection />
       </section>
-    </main>
+    </>
   );
 }

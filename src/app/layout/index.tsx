@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Unbounded, Nunito_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 
+import Footer from '@/widgets/footer';
 import Header from '@/widgets/header';
 
 import '../styles';
@@ -78,7 +79,8 @@ export function RootLayout({
         className={clsx(lato.variable, unbounded.variable, nunitoSans.variable)}
       >
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

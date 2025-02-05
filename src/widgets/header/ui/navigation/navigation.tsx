@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import styles from './styles.module.css';
-import { menu } from '@/widgets/header/config';
+import { menu } from '@/shared/config';
 
 type LinkType = {
   href: string;
