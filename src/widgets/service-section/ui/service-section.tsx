@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import Selected from './select';
 import styles from './styles.module.css';
+import { CARDS_SERVICES } from '@/shared/config';
 import CardPrimary from '@/shared/ui/card-primary';
 import {
   AcUnitIcon,
@@ -12,10 +13,7 @@ import {
   ListIcon,
   NatureIcon,
 } from '@/shared/ui/icons';
-import {
-  SERVICE_LIST,
-  CARDS_SERVICES,
-} from '@/widgets/service-section/config/constans';
+import { SERVICE_LIST } from '@/widgets/service-section/config/constans';
 
 const BUTTONS = [
   { id: null, label: 'Все', icon: <ListIcon />, className: styles.buttonAll },

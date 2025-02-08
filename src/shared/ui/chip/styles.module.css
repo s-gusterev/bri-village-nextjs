@@ -44,7 +44,9 @@
 }
 
 @media (max-width: 480px) {
-  .chipSize_small {
+  .chipSize_small,
+  .chipSize_normal,
+  .chipSize_large {
     height: 29px;
     font-size: 13px;
   }

@@ -1,0 +1,54 @@
+.aboutSection {
+  margin-bottom: 80px;
+}
+
+.aboutSectionContent {
+  display: grid;
+  grid-template-columns: 1fr 580px;
+  gap: 20px;
+}
+
+.aboutSectionTitle {
+  margin-bottom: 20px;
+}
+
+.aboutSectionDescription {
+  margin-bottom: 30px;
+}
+
+.aboutSectionImage {
+  border-radius: 10px;
+  object-fit: cover;
+  height: 100%;
+  max-height: 380px;
+}
+
+@media (max-width: 1180px) {
+  .aboutSectionContent {
+    grid-template-columns: 100%;
+  }
+
+  .aboutSectionText {
+    grid-row: 2 / 3;
+  }
+
+  .aboutSectionImage {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    margin-bottom: 40px;
+  }
+
+  .aboutSectionImage {
+    max-height: 200px;
+  }
+}
