@@ -31,6 +31,7 @@ const SliderItem = ({
         src={slide.image}
         alt={slide.title || 'Изображение слайда'}
         priority
+        className={styles.image}
       />
     </div>
     {onlyImage ? null : (

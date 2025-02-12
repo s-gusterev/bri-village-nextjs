@@ -83,7 +83,7 @@
   color: #949895;
 }
 
-.slider {
+.aboutSlider {
   margin-bottom: 50px;
 }
 
@@ -141,8 +141,9 @@
     margin-bottom: 30px;
   }
 
-  .slider {
+  .aboutSlider {
     --height-slider: 200px !important;
+    margin-bottom: 40px;
   }
 
   .about,

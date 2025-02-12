@@ -75,7 +75,7 @@ export const AboutPage = () => (
           ))}
           height={400}
           autoPlay={false}
-          className={styles.slider}
+          className={styles.aboutSlider}
         />
         <h2 className={styles.titleArticle}>О нашем глэмпинге </h2>
         <Text className={styles.text}>
