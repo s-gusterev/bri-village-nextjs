@@ -1,0 +1,39 @@
+.servicesTitle {
+  margin-bottom: 40px;
+}
+
+.section,
+.sectionCarousel {
+  margin-bottom: 80px;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 440px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carouselImage {
+    height: 320px;
+  }
+
+  .section,
+  .sectionCarousel {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sectionCarousel {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section,
+  .sectionCarousel {
+    margin-bottom: 40px;
+  }
+}
