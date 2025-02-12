@@ -28,7 +28,7 @@ import BookingForm from '@/widgets/booking-form';
 import ReviewsSection from '@/widgets/reviews-section';
 import ServiceSection from '@/widgets/service-section';
 
-export default function HomePage() {
+export const HomePage = () => {
   const { width } = useWindowSize({ initializeWithValue: false });
 
   const isMobile = width !== undefined && width <= 768;
@@ -142,4 +142,4 @@ export default function HomePage() {
       </section>
     </>
   );
-}
+};

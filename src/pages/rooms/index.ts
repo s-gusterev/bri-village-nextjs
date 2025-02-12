@@ -1,1 +1,1 @@
-export { default } from './ui';
+export { RoomsPage, metadata } from './ui';

@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -7,9 +8,13 @@ import styles from './styles.module.css';
 
 interface BreadcrumbsProps {
   customTitles?: Record<string, string>;
+  color?: 'primary' | 'secondary';
 }
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ customTitles = {} }) => {
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
+  customTitles = {},
+  color = 'primary',
+}) => {
   const pathname = usePathname();
   const pathSegments = pathname?.split('/').filter(Boolean);
 
@@ -18,7 +23,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ customTitles = {} }) => {
   return (
     <nav className={styles.breadcrumbs}>
       <ol className={styles.list}>
-        <li className={styles.item}>
+        <li className={clsx(styles.item, styles[`item--${color}`])}>
           <Link href="/" className={styles.link}>
             Главная
           </Link>
@@ -28,7 +33,10 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ customTitles = {} }) => {
           const title = customTitles[segment] || decodeURIComponent(segment);
 
           return (
-            <li key={href} className={styles.item}>
+            <li
+              key={href}
+              className={clsx(styles.item, styles[`item--${color}`])}
+            >
               {index === pathSegments.length - 1 ? (
                 <span>{title}</span>
               ) : (

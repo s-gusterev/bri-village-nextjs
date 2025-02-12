@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import styles from './styles.module.css';
@@ -18,7 +19,12 @@ import AboutSection from '@/widgets/about-section';
 import Banner from '@/widgets/banner';
 import Breadcrumbs from '@/widgets/breadcrumbs';
 
-const RoomsPage = () => {
+export const metadata: Metadata = {
+  title: 'Номера ',
+  description: 'Номера в клэмпинге',
+};
+
+export const RoomsPage = () => {
   return (
     <>
       <div className="container">
@@ -149,4 +155,4 @@ const RoomsPage = () => {
   );
 };
 
-export default RoomsPage;
+// export default RoomsPage;

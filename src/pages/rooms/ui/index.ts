@@ -1,1 +1,1 @@
-export { default } from './rooms';
+export { RoomsPage, metadata } from './rooms';
