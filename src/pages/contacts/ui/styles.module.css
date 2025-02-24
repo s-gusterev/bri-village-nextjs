@@ -1,0 +1,212 @@
+.contacts {
+  margin-bottom: 80px;
+}
+
+.contactsTitle {
+  margin-bottom: 40px;
+}
+
+.contactsMap {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 20px;
+}
+
+.contactsMapDescription {
+  border-radius: 10px;
+  padding: 30px;
+  background:
+    url(../../../shared/assets/images/bg-contacts.png) center / cover no-repeat,
+    #3b9254;
+}
+
+.contactsMapImage {
+  border-radius: 10px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.phone {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140%;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.address {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #f8f8f8;
+  font-style: normal;
+  margin-bottom: 15px;
+}
+
+.email {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #fff;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.socialItem {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialItemLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialItemLinkInsta {
+  position: relative;
+  --color-icon: #eaf5ed;
+}
+
+.socialItemLinkInsta span {
+  position: absolute;
+  right: -24px;
+  top: -24px;
+}
+
+.socialNote {
+  position: relative;
+  padding-left: 15px;
+  --color-icon: #eaf5ed;
+}
+
+.socialNote svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.socialNoteText {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #eaf5ed;
+}
+
+.map {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sectionCarousel,
+.sectionBooking,
+.sectionBanner,
+.sectionAbout,
+.sectionReviews {
+  margin-bottom: 80px;
+}
+
+.carouselImage {
+  border-radius: 10px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .contactsMap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .map {
+    height: 320px;
+  }
+
+  .contactsMapDescription {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .contactsMapImage {
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .phone {
+    font-size: 24px;
+  }
+
+  .address,
+  .email {
+    font-size: 16px;
+  }
+
+  .sectionCarousel,
+  .sectionBooking,
+  .sectionBanner,
+  .sectionAbout,
+  .sectionReviews {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sectionCarousel {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone {
+    font-size: 20px;
+  }
+
+  .address,
+  .email {
+    font-size: 15px;
+  }
+
+  .contactsMapImage {
+    height: 160px;
+  }
+
+  .contactsTitle {
+    margin-bottom: 20px;
+  }
+
+  .socialNoteText {
+    font-size: 13px;
+  }
+
+  .carouselImage {
+    height: 200px;
+  }
+
+  .sectionCarousel,
+  .sectionBooking,
+  .sectionBanner,
+  .sectionAbout,
+  .sectionReviews {
+    margin-bottom: 40px;
+  }
+}

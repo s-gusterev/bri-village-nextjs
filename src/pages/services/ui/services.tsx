@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 import styles from './styles.module.css';
@@ -10,7 +11,12 @@ import Banner from '@/widgets/banner';
 import Breadcrumbs from '@/widgets/breadcrumbs';
 import ServiceSection from '@/widgets/service-section';
 
-const ServicesPage = () => {
+export const metadata: Metadata = {
+  title: 'Услуги и акции',
+  description: 'Страница с услугами и акциями',
+};
+
+export const ServicesPage = () => {
   return (
     <>
       <section className={clsx('container', styles.section)}>
@@ -43,5 +49,3 @@ const ServicesPage = () => {
     </>
   );
 };
-
-export default ServicesPage;

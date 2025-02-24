@@ -1,1 +1,1 @@
-export { default } from './ui';
+export { ServicesPage, metadata } from './ui';

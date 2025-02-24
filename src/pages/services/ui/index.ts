@@ -1,1 +1,1 @@
-export { default } from './services';
+export { ServicesPage, metadata } from './services';
