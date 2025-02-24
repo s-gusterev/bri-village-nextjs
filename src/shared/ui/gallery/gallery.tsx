@@ -1,14 +1,16 @@
 'use client';
-import styles from './styles.module.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import { Navigation, EffectFade } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SliderNavigation from '@/shared/ui/slider-navigation';
-import { CarouselProps } from '../../model/sliders';
-import { useSlider } from '@/shared/lib/useSlider';
 
+import { EffectFade, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { CarouselProps } from '../../model/sliders';
+import Heading from '../heading';
+import styles from './styles.module.css';
+import { useSlider } from '@/shared/lib/useSlider';
+import SliderNavigation from '@/shared/ui/slider-navigation';
 const Gallery: React.FC<CarouselProps> = ({ data, title }) => {
   const {
     swiperRef,
@@ -22,7 +24,7 @@ const Gallery: React.FC<CarouselProps> = ({ data, title }) => {
   return (
     <div className={styles.gallery}>
       <div className={styles.header}>
-        {title && <h2 className={styles.title}>{title}</h2>}
+        {title && <Heading level={2}>{title}</Heading>}
         <div className={styles.navigation}>
           <SliderNavigation
             size="normal"

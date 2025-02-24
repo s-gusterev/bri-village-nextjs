@@ -1,5 +1,2 @@
-export {
-  IMAGES_BEST_HOME,
-  IMAGES_HERO_SLIDER,
-  IMAGES_BEST_HOME_MOBILE,
-} from './sliders';
+export { menu } from './menu';
+export { PHONE, ADDRESS, EMAIL, CARDS_SERVICES } from './constans';

@@ -5,3 +5,5 @@ export type {
   SlideGalleryProps,
   SliderProps,
 } from './sliders';
+
+export type { Card } from './cards';

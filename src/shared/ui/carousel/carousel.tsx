@@ -1,16 +1,23 @@
 'use client';
-import styles from './styles.module.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
+
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import styles from './styles.module.css';
+import { useSlider } from '@/shared/lib/useSlider';
+import { CarouselProps } from '@/shared/model/sliders';
+import Heading from '@/shared/ui/heading';
 import SliderNavigation from '@/shared/ui/slider-navigation';
 
-import { CarouselProps } from '../../model/sliders';
-import { useSlider } from '@/shared/lib/useSlider';
-
-const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
+const Carousel: React.FC<CarouselProps> = ({
+  data,
+  title,
+  slidesPerView = 4,
+  slidesPerViewTablet = 2,
+}) => {
   const {
     swiperRef,
     isPrevDisabled,
@@ -23,7 +30,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
   return (
     <div className={styles.gallery}>
       <div className={styles.header}>
-        {title && <h2 className={styles.title}>{title}</h2>}
+        {title && <Heading level={2}>{title}</Heading>}
         <div className={styles.navigation}>
           <SliderNavigation
             size="normal"
@@ -47,9 +54,9 @@ const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
       <div className={styles.slider}>
         <Swiper
           modules={[Navigation]}
-          loop={true}
+          loop={false}
           speed={300}
-          slidesPerView={1.1}
+          slidesPerView={1.0937}
           spaceBetween={10}
           onBeforeInit={(swiper) => {
             swiperRef.current = swiper;
@@ -61,7 +68,12 @@ const Carousel: React.FC<CarouselProps> = ({ data, title }) => {
               slidesPerView: 1.5,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: slidesPerViewTablet,
+              spaceBetween: 20,
+            },
+            1230: {
+              slidesPerView: slidesPerView,
+              spaceBetween: 20,
             },
           }}
         >

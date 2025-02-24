@@ -1,5 +1,6 @@
 :root {
   --height-slider: 640px;
+  --color-icon: #3b9254;
 }
 
 html {
@@ -27,11 +28,11 @@ a {
 }
 
 .container {
-  max-width: 1210px;
+  max-width: 1212px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 /* Переопределяем стили календаря */
@@ -166,3 +167,13 @@ a {
   color: white !important;
   border-radius: 50% !important;
 }
+
+/* Стили слайдера отзывов */
+
+/* [data-section='reviews'] .swiper-wrapper {
+  align-items: stretch;
+}
+
+[data-section='reviews'] .swiper-slide {
+  height: auto;
+} */

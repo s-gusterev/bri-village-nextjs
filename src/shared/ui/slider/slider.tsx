@@ -1,53 +1,65 @@
 'use client';
-import styles from './styles.module.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import clsx from 'clsx';
 import { CSSProperties } from 'react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import styles from './styles.module.css';
+import { useSlider } from '@/shared/lib/useSlider';
+import { SliderProps } from '@/shared/model';
 import SliderNavigation from '@/shared/ui/slider-navigation';
 import SliderPagination from '@/shared/ui/slider-pagination';
-import { SliderProps } from '@/shared/model';
-import { useSlider } from '@/shared/lib/useSlider';
 
 interface MyCustomCSS extends CSSProperties {
   '--height-slider': string;
 }
 
-const Slider: React.FC<SliderProps> = ({ data, height }) => {
+const Slider: React.FC<SliderProps> = ({
+  data,
+  height,
+  autoPlay,
+  className,
+  ...rest
+}) => {
   const customProperties: MyCustomCSS = {
     '--height-slider': `${height}px`,
   };
 
   const {
     swiperRef,
-    handlePaginationChange,
     goToPrevSlide,
     goToNextSlide,
     handlePaginationClick,
     currentIndex,
+    handleSlideChange,
   } = useSlider(data);
 
+  const autoplaySettings = autoPlay ? { delay: 5000 } : false;
+
   return (
-    <div className={styles.slider} style={customProperties}>
+    <div
+      className={clsx(styles.slider, className)}
+      style={customProperties}
+      {...rest}
+    >
       <Swiper
         pagination={{ type: 'bullets', clickable: true }}
         modules={[Autoplay, Navigation]}
         loop={true}
         speed={400}
-        autoplay={{ delay: 5000 }}
+        autoplay={autoplaySettings}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
-        onSlideChange={handlePaginationChange}
+        onSlideChange={handleSlideChange}
         style={{ borderRadius: '30px', overflow: 'hidden' }}
       >
         {data.map((slide, index) => (
-          <SwiperSlide key={index}>
-            {slide}
-            {/* <SliderItem slide={slide} onlyImage={onlyImage} /> */}
-          </SwiperSlide>
+          <SwiperSlide key={index}>{slide}</SwiperSlide>
         ))}
       </Swiper>
       <SliderNavigation

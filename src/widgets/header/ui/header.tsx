@@ -1,18 +1,23 @@
 'use client';
-import { useEffect, useState } from 'react';
-import styles from './styles.module.css';
-import { LogoLink, Navigation, ContactInfo } from './navigation';
-import { useWindowSize } from '@/shared/lib/use-hooks-ts';
+import clsx from 'clsx';
+import { useMemo, useState } from 'react';
 import { RemoveScroll } from 'react-remove-scroll';
-import CloseButton from '@/shared/ui/close-button';
-import Button from '@/shared/ui/button';
-import Burger from '@/shared/ui/burger';
 
+import styles from './styles.module.css';
+import { useWindowSize } from '@/shared/lib/use-hooks-ts';
+import Burger from '@/shared/ui/burger';
+import Button from '@/shared/ui/button';
+import CloseButton from '@/shared/ui/close-button';
+import {
+  LogoLink,
+  Navigation,
+  ContactInfo,
+} from '@/widgets/header/ui/navigation';
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const { width } = useWindowSize({ initializeWithValue: false });
 
-  const isMobile = width !== undefined && width <= 768;
+  const isMobile = useMemo(() => width !== undefined && width <= 768, [width]);
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
@@ -21,24 +26,22 @@ const Header = () => {
     setOpenMenu(false);
   };
 
-  useEffect(() => {
-    if (!isMobile) {
-      setOpenMenu(false);
-    }
-  }, [isMobile]);
+  if (!isMobile && openMenu) {
+    closeMenu();
+  }
 
   return (
-    <header className={`container ${styles.header} `}>
+    <header className={clsx('container', styles.header)}>
       <div
-        className={`${styles.overlay} ${openMenu ? styles.overlayVisible : ''}`}
+        className={clsx(styles.overlay, { [styles.overlayVisible]: openMenu })}
         onClick={toggleMenu}
       ></div>
       <LogoLink />
       <RemoveScroll enabled={openMenu} removeScrollBar={false}>
         <div
-          className={`${styles.navigation}  ${
-            openMenu ? styles['navigation--open'] : ''
-          } `}
+          className={clsx(styles.navigation, {
+            [styles['navigation--open']]: openMenu,
+          })}
         >
           <div className={styles.mobile}>
             <span className={styles.title__menu}>Меню</span>

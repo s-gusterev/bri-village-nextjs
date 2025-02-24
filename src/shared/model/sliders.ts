@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import { ReactNode } from 'react';
+import { ReactNode, HTMLAttributes } from 'react';
 
 export interface Slide {
   id: number;
@@ -17,12 +17,15 @@ export interface SlideGalleryProps {
   allImages: Slide[];
 }
 
-export interface SliderProps {
+export interface SliderProps extends HTMLAttributes<HTMLDivElement> {
   data: ReactNode[];
   height: number;
+  autoPlay: boolean;
 }
 
 export interface CarouselProps {
   data: ReactNode[];
   title?: string;
+  slidesPerView?: number;
+  slidesPerViewTablet?: number;
 }

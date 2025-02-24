@@ -1,0 +1,247 @@
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.button,
+.buttonAll {
+  border: none;
+  border-radius: 10px;
+  background-color: #eaf5ed;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2a7941;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 30px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    fill 0.3s ease,
+    color 0.3s ease;
+}
+
+.button svg path {
+  fill: #2a7941;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.buttonActive svg path {
+  fill: #fff;
+  transform: scale(1.05);
+}
+
+.button:hover {
+  background-color: #4ea366;
+  color: #fff;
+}
+
+.button:hover svg path {
+  fill: #fff;
+  transform: scale(1.05);
+}
+
+.buttonAll svg path {
+  stroke: #2a7941;
+  transition: all 0.3s ease;
+  transform: scale(1);
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.buttonAll:hover svg path {
+  stroke: #fff;
+  transform: scale(1.05);
+}
+
+.buttonAll:hover {
+  background-color: #4ea366;
+  color: #fff;
+}
+
+.buttonActiveAll svg path {
+  stroke: #fff;
+  transform: scale(1.05);
+}
+
+.buttonActive,
+.buttonActive:hover,
+.buttonActiveAll,
+.buttonActiveAll:hover {
+  background-color: #2a7941;
+  color: #fff;
+  cursor: default;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 40px 20px;
+  margin-bottom: 80px;
+}
+
+.listGrid {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.listGridItem {
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  padding: 30px 30px 50px;
+}
+
+.listGridItem:nth-child(1) {
+  grid-column: 1 / 6;
+}
+
+.listGridItem:nth-child(2) {
+  grid-column: 6 / 13;
+}
+
+.listGridItem:nth-child(3) {
+  grid-column: 1 / 4;
+  grid-row: 2;
+}
+
+.listGridItem:nth-child(4) {
+  grid-column: 4 / 10;
+  grid-row: 2;
+}
+
+.listGridItem:nth-child(5) {
+  grid-column: 10 / 13;
+  grid-row: 2;
+}
+
+.listGridItem:nth-child(2) .listGridItemText {
+  max-width: 524px;
+}
+
+.listGridItem:nth-child(4) .listGridItemText {
+  max-width: 440px;
+}
+
+.listGridItemImage {
+  width: 56px;
+  height: 56px;
+  border-radius: 9px;
+  background-color: #4ea366;
+  background-size: 40px 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.listGridItemText {
+  font-family: var(--second-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #1a3a27;
+}
+
+.selected {
+  margin-bottom: 30px;
+  display: none;
+}
+
+@media (max-width: 1230px) {
+  .list {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  .listGridItem:nth-child(1) {
+    grid-column: 1 / 6;
+  }
+
+  .listGridItem:nth-child(2) {
+    grid-column: 6 / -1;
+  }
+
+  .listGridItem:nth-child(3) {
+    grid-column: 1 / 6;
+    grid-row: auto;
+  }
+
+  .listGridItem:nth-child(4) {
+    grid-column: 6 / -1;
+    grid-row: auto;
+  }
+
+  .listGridItem:nth-child(5) {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    display: none;
+  }
+
+  .selected {
+    display: block;
+  }
+
+  .list {
+    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    gap: 20px 20px;
+    margin-bottom: 40px;
+  }
+
+  .listGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .listGridItem {
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    padding: 20px 20px 20px;
+  }
+
+  .listGridItemText {
+    font-size: 14px;
+  }
+
+  .listGridItem:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  .listGridItem:nth-child(2) {
+    grid-column: 1 / -1;
+  }
+
+  .listGridItem:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .listGridItem:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  .listGridItemImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-size: 28px 28px;
+    margin-bottom: 10px;
+  }
+}

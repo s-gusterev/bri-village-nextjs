@@ -1,0 +1,102 @@
+.aboutSection {
+  margin-bottom: 80px;
+}
+
+.aboutSectionContent {
+  display: grid;
+  grid-template-columns: 1fr 580px;
+  gap: 20px;
+}
+
+.aboutSectionTitle {
+  margin-bottom: 20px;
+}
+
+.aboutSectionDescription {
+  margin-bottom: 30px;
+}
+
+.aboutSectionItem {
+  padding: 20px 30px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+}
+
+.aboutSectionIcon {
+  margin-bottom: 15px;
+}
+
+.aboutSectionIcon svg path {
+  fill: #3b9254;
+}
+
+.masonry {
+  display: flex;
+  margin-left: -20px; /* Отступ между элементами */
+  width: auto;
+  margin-top: 80px;
+}
+
+.masonryColumn {
+  padding-left: 20px; /* Отступ между элементами */
+  background-clip: padding-box;
+}
+
+/* Стили для элементов */
+.masonryColumn > div {
+  margin-bottom: 20px; /* Отступ между элементами */
+}
+
+.button {
+  margin: 40px auto 0;
+  width: 250px !important;
+  justify-content: center;
+}
+
+@media (max-width: 1180px) {
+  .aboutSectionContent {
+    grid-template-columns: 100%;
+  }
+
+  .aboutSectionText {
+    grid-row: 2 / 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .masonry {
+    margin-top: 60px;
+  }
+
+  .aboutSection {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSectionSlider {
+    --height-slider: 300px !important;
+  }
+
+  .aboutSectionButton {
+    justify-content: center;
+  }
+
+  .aboutSectionButton,
+  .button {
+    width: 100%;
+  }
+
+  .aboutSectionItem {
+    padding: 20px;
+  }
+
+  .masonry {
+    margin-top: 40px;
+  }
+
+  .aboutSection {
+    margin-bottom: 40px;
+  }
+}

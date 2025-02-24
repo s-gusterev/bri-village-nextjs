@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.overlay::after {
+.overlayBackground::after {
   content: '';
   position: absolute;
   top: 0;
@@ -12,7 +12,7 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.overlay img {
+.overlay img.image {
   width: 100%;
   height: var(--height-slider);
   object-fit: cover;
