@@ -1,11 +1,13 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useRef, useState, MutableRefObject } from 'react';
 import { Swiper as SwiperCore } from 'swiper/types';
 
 import { CarouselProps } from '@/shared/model/sliders';
 
 export const useSlider = (data: CarouselProps['data']) => {
-  const swiperRef = useRef<SwiperCore>(null);
+  const swiperRef = useRef<SwiperCore | null>(
+    null,
+  ) as MutableRefObject<SwiperCore | null>;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [isPrevDisabled, setIsPrevDisabled] = useState(true);
