@@ -5,7 +5,7 @@ const MapComponent = () => {
   return (
     <YMaps
       query={{
-        apikey: '8ae5470d-cbf0-4cbc-9088-d313b93b690d',
+        apikey: process.env.NEXT_PUBLIC_YMAPS_API_KEY,
       }}
     >
       <Map
